@@ -7,3 +7,6 @@ def index(request):
         'page_title': 'First Django App'
     }
     return render(request, 'index.html', context)
+
+def second_page(request):
+    return render(request, 'second_page.html')
