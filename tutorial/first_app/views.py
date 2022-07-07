@@ -1,12 +1,13 @@
 from django.shortcuts import render
+from django.views import View
 
 # Create your views here.
 
-def index(request):
-    context = {
-        'page_title': 'First Django App'
-    }
-    return render(request, 'index.html', context)
+class MainView(View):
 
-def second_page(request):
-    return render(request, 'second_page.html')
+    def get(self, request, foo):
+        context = {
+            'page_title': 'First Django App',
+            'foo': foo
+        }
+        return render(request, 'index.html', context)
