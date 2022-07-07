@@ -1,13 +1,17 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views import View
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 
 class MainView(View):
 
-    def get(self, request, foo):
+    def get(self, request):
         context = {
-            'page_title': 'First Django App',
-            'foo': foo
+            'page_title': 'First Django App'
         }
         return render(request, 'index.html', context)
+
+def redirect(request):
+    return HttpResponseRedirect('https://google.com')    
