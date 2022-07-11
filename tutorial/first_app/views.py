@@ -14,4 +14,7 @@ class MainView(View):
         return render(request, 'index.html', context)
 
 def redirect(request):
-    return HttpResponseRedirect('https://google.com')    
+    return HttpResponseRedirect('https://google.com')
+
+def second_page(request):
+    return render(request, 'second_page.html')        
